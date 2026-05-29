@@ -359,7 +359,6 @@ function App(){
   /* ── ★ 활동별 개별 제출 ── */
   const submitActivity=async(qid)=>{
     const curAns=answers[qid]||{};
-    if((curAns.text||"").trim().length<20){alert("답변을 20자 이상 입력해주세요.");return;}
     setSubmitting(p=>({...p,[qid]:true}));
     const now=new Date().toLocaleString("ko-KR");
     const updAnswers={...answers,[qid]:{...curAns,status:"제출완료",submittedAt:now,rejectionNote:""}};
